@@ -6,6 +6,7 @@
  */
 package tugasakhir;
 
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -303,6 +304,11 @@ public class Tiket extends javax.swing.JFrame {
         TxtNama.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxtNamaActionPerformed(evt);
+            }
+        });
+        TxtNama.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                TxtNamaKeyTyped(evt);
             }
         });
 
@@ -698,6 +704,18 @@ public class Tiket extends javax.swing.JFrame {
         kelas();
     }//GEN-LAST:event_RbBisnisActionPerformed
 
+    private void TxtNamaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtNamaKeyTyped
+        // TODO add your handling code here:
+        TxtNama(evt);
+    }//GEN-LAST:event_TxtNamaKeyTyped
+
+    
+    void TxtNama(KeyEvent TxtNama){
+        if(Character.isDigit(TxtNama.getKeyChar())){
+            TxtNama.consume();
+            JOptionPane.showMessageDialog(null,"Pada Kolom ini Hanya Bisa Memasukan Karakter Huruf");
+        }
+    }
     /**
      * @param args the command line arguments
      */
